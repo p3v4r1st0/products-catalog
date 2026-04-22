@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos em Promoção</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif; background: #f5f5f5; color: #1a1a1a; line-height: 1.6; }
+        .products-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .hero-banner { width: 100%; min-height: 300px; background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.5) 100%), url('https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=1200&h=400&fit=crop'); background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; text-align: center; color: #fff; margin-bottom: 60px; border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.15); }
+        .hero-title { font-size: 3.5rem; font-weight: 900; letter-spacing: 3px; text-transform: uppercase; margin: 0; padding: 20px 40px; text-shadow: 2px 2px 8px rgba(0,0,0,0.5); }
+        .products-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; margin-bottom: 60px; }
+        .product-card { background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 6px 20px rgba(0,0,0,0.08); transition: transform 0.3s ease, box-shadow 0.3s ease; display: flex; flex-direction: column; border: 1px solid #eee; }
+        .product-card:hover { transform: translateY(-6px); box-shadow: 0 12px 40px rgba(0,0,0,0.15); }
+        .product-image { width: 100%; height: 200px; overflow: hidden; background: #f8f9fa; display: flex; align-items: center; justify-content: center; }
+        .product-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease; }
+        .product-card:hover .product-image img { transform: scale(1.05); }
+        .product-title { font-size: 1.1rem; font-weight: 700; margin: 0; padding: 16px 16px 8px 16px; color: #1a1a1a; line-height: 1.3; min-height: 60px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+        .product-price { font-size: 1.5rem; font-weight: 800; color: #00a651; margin: 0 0 16px 16px; }
+        .product-btn { display: inline-block; background: linear-gradient(135deg, #0073aa 0%, #005a87 100%); color: #fff !important; text-decoration: none; padding: 12px 24px; margin: 0 16px 16px 16px; border-radius: 8px; font-weight: 600; text-align: center; transition: background 0.2s ease; border: none; cursor: pointer; }
+        .product-btn:hover { background: linear-gradient(135deg, #005a87 0%, #004470 100%); color: #fff !important; }
+        @media (max-width: 1024px) { .products-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; } }
+        @media (max-width: 768px) { .hero-title { font-size: 2.2rem; padding: 15px 20px; } .products-grid { grid-template-columns: 1fr; gap: 20px; } }
+    </style>
+</head>
+<body>
+    <div class="products-container">
+        <div class="hero-banner"><h1 class="hero-title">Produtos em Promoções</h1></div>
+        <div class="products-grid">
+            <div class="product-card" data-product-id="prod-001">
+                <div class="product-image"><img src="https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=400&h=400&fit=crop" alt="Mouse Sem Fio Logitech M170" loading="lazy"></div>
+                <h3 class="product-title">Mouse Sem Fio Logitech M170</h3>
+                <p class="product-price">R$ 59,90</p>
+                <a href="https://example.com/mouse-m170" target="_blank" rel="noopener" class="product-btn">Ver Oferta</a>
+            </div>
+            <div class="product-card" data-product-id="prod-002">
+                <div class="product-image"><img src="https://images.unsplash.com/photo-1599669454699-248893623440?w=400&h=400&fit=crop" alt="Headset Gamer HyperX Cloud II" loading="lazy"></div>
+                <h3 class="product-title">Headset Gamer HyperX Cloud II</h3>
+                <p class="product-price">R$ 299,90</p>
+                <a href="https://example.com/headset-hyperx" target="_blank" rel="noopener" class="product-btn">Ver Oferta</a>
+            </div>
+            <div class="product-card" data-product-id="prod-003">
+                <div class="product-image"><img src="https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?w=400&h=400&fit=crop" alt="SSD NVMe 1TB Samsung 980" loading="lazy"></div>
+                <h3 class="product-title">SSD NVMe 1TB Samsung 980</h3>
+                <p class="product-price">R$ 389,90</p>
+                <a href="https://example.com/ssd-samsung" target="_blank" rel="noopener" class="product-btn">Ver Oferta</a>
+            </div>
+            <div class="product-card" data-product-id="prod-004">
+                <div class="product-image"><img src="https://images.unsplash.com/photo-1593192807058-5b64a8829b70?w=400&h=400&fit=crop" alt="Roteador Wi-Fi 6 TP-Link Archer AX50" loading="lazy"></div>
+                <h3 class="product-title">Roteador Wi-Fi 6 TP-Link Archer AX50</h3>
+                <p class="product-price">R$ 449,90</p>
+                <a href="https://example.com/roteador-tplink" target="_blank" rel="noopener" class="product-btn">Ver Oferta</a>
+            </div>
+            <div class="product-card" data-product-id="prod-005">
+                <div class="product-image"><img src="https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=400&h=400&fit=crop" alt='Monitor 27" IPS Full HD LG' loading="lazy"></div>
+                <h3 class="product-title">Monitor 27" IPS Full HD LG</h3>
+                <p class="product-price">R$ 799,90</p>
+                <a href="https://example.com/monitor-lg" target="_blank" rel="noopener" class="product-btn">Ver Oferta</a>
+            </div>
+            <div class="product-card" data-product-id="prod-006">
+                <div class="product-image"><img src="https://images.unsplash.com/photo-1541140532154-b024d705b90a?w=400&h=400&fit=crop" alt="Teclado Gamer Mecânico Redragon Kumara" loading="lazy"></div>
+                <h3 class="product-title">Teclado Gamer Mecânico Redragon Kumara</h3>
+                <p class="product-price">R$ 189,90</p>
+                <a href="https://example.com/teclado-redragon" target="_blank" rel="noopener" class="product-btn">Ver Oferta</a>
+            </div>
+            <div class="product-card" data-product-id="prod-007">
+                <div class="product-image"><img src="https://images.unsplash.com/photo-1598550476439-6847785fcea6?w=400&h=400&fit=crop" alt="Cadeira Gamer ThunderX3 EC3" loading="lazy"></div>
+                <h3 class="product-title">Cadeira Gamer ThunderX3 EC3</h3>
+                <p class="product-price">R$ 599,90</p>
+                <a href="https://example.com/cadeira-thunderx3" target="_blank" rel="noopener" class="product-btn">Ver Oferta</a>
+            </div>
+            <div class="product-card" data-product-id="prod-008">
+                <div class="product-image"><img src="https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?w=400&h=400&fit=crop" alt="HD Externo 2TB Seagate Backup Plus" loading="lazy"></div>
+                <h3 class="product-title">HD Externo 2TB Seagate Backup Plus</h3>
+                <p class="product-price">R$ 349,90</p>
+                <a href="https://example.com/hd-seagate" target="_blank" rel="noopener" class="product-btn">Ver Oferta</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
