@@ -11,14 +11,15 @@
         .hero-banner { width: 100%; min-height: 300px; background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.5) 100%), url('https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=1200&h=400&fit=crop'); background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; text-align: center; color: #fff; margin-bottom: 60px; border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.15); }
         .hero-title { font-size: 3.5rem; font-weight: 900; letter-spacing: 3px; text-transform: uppercase; margin: 0; padding: 20px 40px; text-shadow: 2px 2px 8px rgba(0,0,0,0.5); }
         .products-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; margin-bottom: 60px; }
-        .product-card { background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 6px 20px rgba(0,0,0,0.08); transition: transform 0.3s ease, box-shadow 0.3s ease; display: flex; flex-direction: column; border: 1px solid #eee; }
+        .product-card { background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 6px 20px rgba(0,0,0,0.08); transition: transform 0.3s ease, box-shadow 0.3s ease; display: flex; flex-direction: column; border: 1px solid #eee; height: 100%; }
         .product-card:hover { transform: translateY(-6px); box-shadow: 0 12px 40px rgba(0,0,0,0.15); }
-        .product-image { width: 100%; height: 200px; overflow: hidden; background: #f8f9fa; display: flex; align-items: center; justify-content: center; }
+        .product-image { width: 100%; height: 200px; overflow: hidden; background: #f8f9fa; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
         .product-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease; }
         .product-card:hover .product-image img { transform: scale(1.05); }
         .product-title { font-size: 1.1rem; font-weight: 700; margin: 0; padding: 16px 16px 8px 16px; color: #1a1a1a; line-height: 1.3; min-height: 60px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
         .product-price { font-size: 1.5rem; font-weight: 800; color: #00a651; margin: 0 0 16px 16px; }
-        .product-btn { display: inline-block; background: linear-gradient(135deg, #0073aa 0%, #005a87 100%); color: #fff !important; text-decoration: none; padding: 12px 24px; margin: 0 16px 16px 16px; border-radius: 8px; font-weight: 600; text-align: center; transition: background 0.2s ease; border: none; cursor: pointer; }
+        .product-rating { font-size: 0.9rem; color: #f5a623; margin: 0 0 12px 16px; }
+        .product-btn { display: inline-block; background: linear-gradient(135deg, #0073aa 0%, #005a87 100%); color: #fff !important; text-decoration: none; padding: 12px 24px; margin: 0 16px 16px 16px; border-radius: 8px; font-weight: 600; text-align: center; transition: background 0.2s ease; border: none; cursor: pointer; align-self: flex-start; }
         .product-btn:hover { background: linear-gradient(135deg, #005a87 0%, #004470 100%); color: #fff !important; }
         @media (max-width: 1024px) { .products-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; } }
         @media (max-width: 768px) { .hero-title { font-size: 2.2rem; padding: 15px 20px; } .products-grid { grid-template-columns: 1fr; gap: 20px; } }
@@ -28,90 +29,8 @@
     <div class="products-container">
         <div class="hero-banner"><h1 class="hero-title">Produtos em Promoções</h1></div>
         <div class="products-grid">
-            <div class="product-card" data-product-id="prod-001">
-                <div class="product-image"><img src="https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=400&h=400&fit=crop" alt="Mouse Sem Fio Logitech M170" loading="lazy"></div>
-                <h3 class="product-title">Mouse Sem Fio Logitech M170</h3>
-                <p class="product-price">R$ 59,90</p>
-                <a href="https://example.com/mouse-m170" target="_blank" rel="noopener" class="product-btn">Ver Oferta</a>
-            </div>
-            <div class="product-card" data-product-id="prod-002">
-                <div class="product-image"><img src="https://images.unsplash.com/photo-1599669454699-248893623440?w=400&h=400&fit=crop" alt="Headset Gamer HyperX Cloud II" loading="lazy"></div>
-                <h3 class="product-title">Headset Gamer HyperX Cloud II</h3>
-                <p class="product-price">R$ 299,90</p>
-                <a href="https://example.com/headset-hyperx" target="_blank" rel="noopener" class="product-btn">Ver Oferta</a>
-            </div>
-            <div class="product-card" data-product-id="prod-003">
-                <div class="product-image"><img src="https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?w=400&h=400&fit=crop" alt="SSD NVMe 1TB Samsung 980" loading="lazy"></div>
-                <h3 class="product-title">SSD NVMe 1TB Samsung 980</h3>
-                <p class="product-price">R$ 389,90</p>
-                <a href="https://example.com/ssd-samsung" target="_blank" rel="noopener" class="product-btn">Ver Oferta</a>
-            </div>
-            <div class="product-card" data-product-id="prod-004">
-                <div class="product-image"><img src="https://images.unsplash.com/photo-1593192807058-5b64a8829b70?w=400&h=400&fit=crop" alt="Roteador Wi-Fi 6 TP-Link Archer AX50" loading="lazy"></div>
-                <h3 class="product-title">Roteador Wi-Fi 6 TP-Link Archer AX50</h3>
-                <p class="product-price">R$ 449,90</p>
-                <a href="https://example.com/roteador-tplink" target="_blank" rel="noopener" class="product-btn">Ver Oferta</a>
-            </div>
-            <div class="product-card" data-product-id="prod-005">
-                <div class="product-image"><img src="https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=400&h=400&fit=crop" alt='Monitor 27" IPS Full HD LG' loading="lazy"></div>
-                <h3 class="product-title">Monitor 27" IPS Full HD LG</h3>
-                <p class="product-price">R$ 799,90</p>
-                <a href="https://example.com/monitor-lg" target="_blank" rel="noopener" class="product-btn">Ver Oferta</a>
-            </div>
-            <div class="product-card" data-product-id="prod-006">
-                <div class="product-image"><img src="https://images.unsplash.com/photo-1541140532154-b024d705b90a?w=400&h=400&fit=crop" alt="Teclado Gamer Mecânico Redragon Kumara" loading="lazy"></div>
-                <h3 class="product-title">Teclado Gamer Mecânico Redragon Kumara</h3>
-                <p class="product-price">R$ 189,90</p>
-                <a href="https://example.com/teclado-redragon" target="_blank" rel="noopener" class="product-btn">Ver Oferta</a>
-            </div>
-            <div class="product-card" data-product-id="prod-007">
-                <div class="product-image"><img src="https://images.unsplash.com/photo-1598550476439-6847785fcea6?w=400&h=400&fit=crop" alt="Cadeira Gamer ThunderX3 EC3" loading="lazy"></div>
-                <h3 class="product-title">Cadeira Gamer ThunderX3 EC3</h3>
-                <p class="product-price">R$ 599,90</p>
-                <a href="https://example.com/cadeira-thunderx3" target="_blank" rel="noopener" class="product-btn">Ver Oferta</a>
-            </div>
-            <div class="product-card" data-product-id="prod-008">
-                <div class="product-image"><img src="https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?w=400&h=400&fit=crop" alt="HD Externo 2TB Seagate Backup Plus" loading="lazy"></div>
-                <h3 class="product-title">HD Externo 2TB Seagate Backup Plus</h3>
-                <p class="product-price">R$ 349,90</p>
-                <a href="https://example.com/hd-seagate" target="_blank" rel="noopener" class="product-btn">Ver Oferta</a>
-            
-
-<div class="product-card" data-product-id="faaefff3-c3bb-47b1-9a50-2d524c118451">
-    <div class="product-image">
-        <img src="https://cf.shopee.com.br/file/br-11134207-81z1k-mdvx5wyezda808" alt="KIT SHAMPOO V-FLOC SINTRA FAST CERA TOK FINAL VONIXX PNEU PRETINHO VINTEX" loading="lazy" />
+            <!-- Produtos serão inseridos aqui dinamicamente -->
+        </div>
     </div>
-    <h3 class="product-title">KIT SHAMPOO V-FLOC SINTRA FAST CERA TOK FINAL VONIXX PNEU PRETINHO VINTEX</h3>
-    <p class="product-price">R$ 💲 R$ 113,22 (ou em 10x de R$ 11,32 sem juros)</p>
-    <p class="product-rating">⭐ 4.9</p>
-    <a href="https://s.shopee.com.br/LjRgTxsIl" target="_blank" rel="noopener" class="product-btn">Ver Oferta</a>
-</div>
-<div class="product-card" data-product-id="e1dc2d32-b33d-49a3-b089-03277e82724b">
-    <div class="product-image">
-        <img src="https://cf.shopee.com.br/file/sg-11134201-81zti-mn4oe3kqzbpc70" alt="Escolha Monte Seus Produtos Vonixx Restaurax  V Floc Intense Lava Auto V Mol Blend 500ml" loading="lazy" />
-    </div>
-    <h3 class="product-title">Escolha Monte Seus Produtos Vonixx Restaurax  V Floc Intense Lava Auto V Mol Blend 500ml</h3>
-    <p class="product-price">R$ 💲 R$ 67,90 (ou em 10x de R$ 6,79 sem juros)</p>
-    <p class="product-rating">⭐ 4.9</p>
-    <a href="https://s.shopee.com.br/7AZndNdy0S" target="_blank" rel="noopener" class="product-btn">Ver Oferta</a>
-</div>
-<div class="product-card" data-product-id="ac1aa5dc-8de9-4197-a1b1-7cfa759a67a0">
-    <div class="product-image">
-        <img src="https://cf.shopee.com.br/file/br-11134207-7r98o-lzawb2jf7rxhf2" alt="Creatina Monohidratada Pura 1kg, 500g, 600, 300g e 150g - Dark Lab" loading="lazy" />
-    </div>
-    <h3 class="product-title">Creatina Monohidratada Pura 1kg, 500g, 600, 300g e 150g - Dark Lab</h3>
-    <p class="product-price">R$ 💲 R$ 69,90 (ou em 10x de R$ 6,99 sem juros)</p>
-    <p class="product-rating">⭐ 4.9</p>
-    <a href="https://s.shopee.com.br/6pwxElfEgQ" target="_blank" rel="noopener" class="product-btn">Ver Oferta</a>
-</div>
-<div class="product-card" data-product-id="d74e65e6-1d0f-4ddd-b1d9-2f89c8daa4fa">
-    <div class="product-image">
-        <img src="https://cf.shopee.com.br/file/br-11134207-81z1k-mfrvxdr9i96v11" alt="40 Peças / 46 Peças Jogo De Chave Catraca Caixa De Ferramentas Completa Reversível Soquetes Maleta" loading="lazy" />
-    </div>
-    <h3 class="product-title">40 Peças / 46 Peças Jogo De Chave Catraca Caixa De Ferramentas Completa Reversível Soquetes Maleta</h3>
-    <p class="product-price">R$ 💲 R$ 32,99 (ou em 10x de R$ 3,30 sem juros)</p>
-    <p class="product-rating">⭐ 4.8</p>
-    <a href="https://s.shopee.com.br/16bHrz8yf" target="_blank" rel="noopener" class="product-btn">Ver Oferta</a>
-</div>
 </body>
 </html>
